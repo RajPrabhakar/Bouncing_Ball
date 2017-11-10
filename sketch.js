@@ -9,10 +9,9 @@ function setup()  {
 }
 
 function draw() {
-  background(0);
-  stroke(255);
-  line(0, height-40, width, height-40);
-
+  background(135,206,235);
+  fill(34,139,34);
+  rect(0, height-40, width, height);
   for(var i = walls.length-1; i>=0; i--)  {
     walls[i].show();
     walls[i].update();

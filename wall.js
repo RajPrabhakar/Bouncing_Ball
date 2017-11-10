@@ -5,7 +5,8 @@ function Wall() {
   this.x = width;
 
   this.show = function()  {
-    fill(255);
+    noStroke();
+    fill(210,105,30);
     rect(this.x, height-this.bottom, this.w, this.bottom-40);
   }
 
