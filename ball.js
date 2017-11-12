@@ -1,29 +1,35 @@
 function Ball() {
   this.x = 100;
-  this.y = height-50;
-  this.pos = 0;
-  this.acc = 0.032;
-  this.vel = this.acc;
-  this.step = 4.2;
-  this.force = this.step;
+  this.y = 250;
+  this.maxHeight = 80;
+  this.height = this.y;
+  this.jumpVal = 0;
+  this.theta = 0;
+  this.speed = 3;
+  angleMode(DEGREES);
 
-  this.show = function()  {
-    fill(255,0,0);
+  this.ground = function()  {
+    //ball: red: #FF0000
+    fill(255, 0, 0);
     ellipse(this.x, this.y, 20, 20);
   }
 
   this.jump = function() {
-    this.force -= this.vel;
-    this.y -= this.force;
+    //ball jumps
+    this.theta += this.speed;
+    this.jumpVal = this.maxHeight * abs(sin(this.theta));
+    this.height -= this.jumpVal;
 
-    if(this.y <= 180) {
-      this.force = -this.step;
-      this.vel = -this.acc*2.5;
-    }
+    //ball: red: #FF0000
+    fill(255, 0, 0);
+    ellipse(this.x, this.height, 20, 20);
+    this.height = this.y;
 
-    if(this.y >= height-50) {
-      this.force = this.step;
-      this.vel = this.acc*2.5;
+    //ball reaches ground
+    if (this.theta % 180 == 0)  {
+      return 0;
+    } else {
+      return 1;
     }
   }
 }
