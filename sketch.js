@@ -36,9 +36,17 @@ function draw() {
   }
 }
 
+//when spacebar pressed
 function keyPressed() {
   if (key == ' ') {
     space = 1;
     space = ball.jump();
   }
+}
+
+//when touched
+function touchStarted() {
+  space = 1;
+  space = ball.jump();
+  return false;
 }

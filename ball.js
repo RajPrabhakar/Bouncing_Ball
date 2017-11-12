@@ -27,6 +27,7 @@ function Ball() {
 
     //ball reaches ground
     if (this.theta % 180 == 0)  {
+      this.theta = 0;
       return 0;
     } else {
       return 1;
