@@ -1,6 +1,7 @@
 var ball;
 var walls = [];
 var space = 0;
+var score = 0;
 
 function setup()  {
   createCanvas(900, 300);
@@ -27,6 +28,14 @@ function draw() {
   if (frameCount % 100 == 0) {
     walls.push(new Wall());
   }
+
+  //score card
+  if (frameCount % 10 == 0) {
+    score ++;
+  }
+  fill(255);
+  textSize(30);
+  text(score, 800, 50);
 
   //ball condition
   if (space == 0) {
