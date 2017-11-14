@@ -1,7 +1,6 @@
 function Wall() {
   this.x = width;
-  this.rand_y = random(height-85, height-105);
-  this.top_y = this.rand_y;
+  this.top_y = random(height-85, height-105);
   this.bot_y = height-40;
   this.w = 10;
   this.speed = 3;

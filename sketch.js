@@ -2,11 +2,14 @@ var ball;
 var walls = [];
 var space = 0;
 var score = 0;
+var frame = 1;
+var interval;
 
 function setup()  {
   createCanvas(900, 300);
   walls.push(new Wall());
   ball = new Ball();
+  interval = floor(random(70, 110));
 }
 
 function draw() {
@@ -25,9 +28,12 @@ function draw() {
   }
 
   //total number of walls in canvas
-  if (frameCount % 100 == 0) {
+  if (frame % interval == 0) {
     walls.push(new Wall());
+    interval = floor(random(70, 110));
+    frame = 0;
   }
+  frame ++;
 
   //score card
   if (frameCount % 10 == 0) {
