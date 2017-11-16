@@ -6,6 +6,7 @@ function Ball() {
   this.jumpVal = 0;
   this.theta = 0;
   this.speed = 3;
+  this.ball_y = 250;
   angleMode(DEGREES);
 
   this.ground = function()  {
@@ -23,6 +24,7 @@ function Ball() {
     //ball: red: #FF0000
     fill(255, 0, 0);
     ellipse(this.x, this.height, 20, 20);
+    this.ball_y = this.height;
     this.height = this.y;
 
     //ball reaches ground

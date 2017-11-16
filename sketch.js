@@ -25,6 +25,14 @@ function draw() {
   for(var i = walls.length-1; i>=0; i--)  {
     walls[i].show();
     walls[i].update();
+
+    //ball hit
+    if (ball.ball_y+8 >= walls[i].top_y)  {
+      if ((ball.x+8 > walls[i].x) && (ball.x+8 < walls[i].x+walls[i].w))  {
+        console.log('hit');
+        frameRate(0);
+      }
+    }
   }
 
   //total number of walls in canvas
